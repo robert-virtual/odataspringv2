@@ -1,0 +1,586 @@
+{
+	"info": {
+		"_postman_id": "dc25879e-1206-4e3e-947e-3d85d8fc78a6",
+		"name": "odata",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12770124"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/odata/Products?$format=json",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"odata",
+								"Products"
+							],
+							"query": [
+								{
+									"key": "$format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get all products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/odata/Products?$format=json",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"odata",
+										"Products"
+									],
+									"query": [
+										{
+											"key": "$format",
+											"value": "json"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "DataServiceVersion",
+									"value": "2.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1508"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Mar 2023 16:22:47 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"d\": {\n        \"results\": [\n            {\n                \"__metadata\": {\n                    \"id\": \"http://localhost:8080/odata/Products(1L)\",\n                    \"uri\": \"http://localhost:8080/odata/Products(1L)\",\n                    \"type\": \"default.Product\"\n                },\n                \"Active\": true,\n                \"CreatedAt\": \"/Date(1680156000000)/\",\n                \"Description\": \"240 GB storage\",\n                \"Id\": \"1\",\n                \"Name\": \"Iphone x red\",\n                \"Price\": \"30000.0\",\n                \"CategoryDetails\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://localhost:8080/odata/Products(1L)/CategoryDetails\"\n                    }\n                }\n            },\n            {\n                \"__metadata\": {\n                    \"id\": \"http://localhost:8080/odata/Products(2L)\",\n                    \"uri\": \"http://localhost:8080/odata/Products(2L)\",\n                    \"type\": \"default.Product\"\n                },\n                \"Active\": true,\n                \"CreatedAt\": \"/Date(1680156000000)/\",\n                \"Description\": \"240 GB storage\",\n                \"Id\": \"2\",\n                \"Name\": \"Iphone x blue\",\n                \"Price\": \"30000.0\",\n                \"CategoryDetails\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://localhost:8080/odata/Products(2L)/CategoryDetails\"\n                    }\n                }\n            },\n            {\n                \"__metadata\": {\n                    \"id\": \"http://localhost:8080/odata/Products(3L)\",\n                    \"uri\": \"http://localhost:8080/odata/Products(3L)\",\n                    \"type\": \"default.Product\"\n                },\n                \"Active\": true,\n                \"CreatedAt\": \"/Date(1680156000000)/\",\n                \"Description\": \"240 GB storage\",\n                \"Id\": \"3\",\n                \"Name\": \"Iphone x white\",\n                \"Price\": \"30000.0\",\n                \"CategoryDetails\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://localhost:8080/odata/Products(3L)/CategoryDetails\"\n                    }\n                }\n            },\n            {\n                \"__metadata\": {\n                    \"id\": \"http://localhost:8080/odata/Products(4L)\",\n                    \"uri\": \"http://localhost:8080/odata/Products(4L)\",\n                    \"type\": \"default.Product\"\n                },\n                \"Active\": true,\n                \"CreatedAt\": \"/Date(1680156000000)/\",\n                \"Description\": \"240 GB storage\",\n                \"Id\": \"4\",\n                \"Name\": \"Iphone x black\",\n                \"Price\": \"30000.0\",\n                \"CategoryDetails\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://localhost:8080/odata/Products(4L)/CategoryDetails\"\n                    }\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\":\"Iphone 8 gray\",\r\n    \"Description\":\"500Gb storage\",\r\n    \"Price\":30000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/odata/Products",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"odata",
+								"Products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\":\"Iphone 13 gray\",\r\n    \"Description\":\"500Gb storage\",\r\n    \"Price\":30000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/odata/Products?$format=json",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"odata",
+										"Products"
+									],
+									"query": [
+										{
+											"key": "$format",
+											"value": "json"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "DataServiceVersion",
+									"value": "2.0"
+								},
+								{
+									"key": "Location",
+									"value": "http://localhost:8080/odata/Products(9L)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/atom+xml;type=entry;charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1015"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Mar 2023 16:55:06 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<entry xmlns=\"http://www.w3.org/2005/Atom\" xmlns:m=\"http://schemas.microsoft.com/ado/2007/08/dataservices/metadata\" xmlns:d=\"http://schemas.microsoft.com/ado/2007/08/dataservices\" xml:base=\"http://localhost:8080/odata/\">\n    <id>http://localhost:8080/odata/Products(9L)</id>\n    <title type=\"text\">Products</title>\n    <updated>2023-03-30T16:55:06.583Z</updated>\n    <category term=\"default.Product\" scheme=\"http://schemas.microsoft.com/ado/2007/08/dataservices/scheme\"></category>\n    <link href=\"Products(9L)\" rel=\"edit\" title=\"Product\"></link>\n    <link href=\"Products(9L)/CategoryDetails\" rel=\"http://schemas.microsoft.com/ado/2007/08/dataservices/related/CategoryDetails\" title=\"CategoryDetails\" type=\"application/atom+xml;type=feed\"></link>\n    <content type=\"application/xml\">\n        <m:properties>\n            <d:Active>false</d:Active>\n            <d:CreatedAt m:null=\"true\"></d:CreatedAt>\n            <d:Description>500Gb storage</d:Description>\n            <d:Id>9</d:Id>\n            <d:Name>Iphone 14 gray</d:Name>\n            <d:Price>40000.0</d:Price>\n        </m:properties>\n    </content>\n</entry>"
+						}
+					]
+				},
+				{
+					"name": "update product",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Price\":29000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/odata/Products(1)",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"odata",
+								"Products(1)"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update product",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Price\":29000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/odata/Products(1)",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"odata",
+										"Products(1)"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "DataServiceVersion",
+									"value": "2.0"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Mar 2023 17:14:57 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "get product x",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"PROD_ID\", 1);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/odata/Products({{PROD_ID}})?$format=json",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"odata",
+								"Products({{PROD_ID}})"
+							],
+							"query": [
+								{
+									"key": "$format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get product x",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/odata/Products({{PROD_ID}})?$format=json",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"odata",
+										"Products({{PROD_ID}})"
+									],
+									"query": [
+										{
+											"key": "$format",
+											"value": "json"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "DataServiceVersion",
+									"value": "2.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "376"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Mar 2023 16:24:48 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"d\": {\n        \"__metadata\": {\n            \"id\": \"http://localhost:8080/odata/Products(1L)\",\n            \"uri\": \"http://localhost:8080/odata/Products(1L)\",\n            \"type\": \"default.Product\"\n        },\n        \"Active\": true,\n        \"CreatedAt\": \"/Date(1680156000000)/\",\n        \"Description\": \"240 GB storage\",\n        \"Id\": \"1\",\n        \"Name\": \"Iphone x red\",\n        \"Price\": \"30000.0\",\n        \"CategoryDetails\": {\n            \"__deferred\": {\n                \"uri\": \"http://localhost:8080/odata/Products(1L)/CategoryDetails\"\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get categories of product x",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/odata/Products?$format=json",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"odata",
+								"Products"
+							],
+							"query": [
+								{
+									"key": "$format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get product x",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/odata/Products({{PROD_ID}})?$format=json",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"odata",
+										"Products({{PROD_ID}})"
+									],
+									"query": [
+										{
+											"key": "$format",
+											"value": "json"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "DataServiceVersion",
+									"value": "2.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "376"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Mar 2023 16:24:48 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"d\": {\n        \"__metadata\": {\n            \"id\": \"http://localhost:8080/odata/Products(1L)\",\n            \"uri\": \"http://localhost:8080/odata/Products(1L)\",\n            \"type\": \"default.Product\"\n        },\n        \"Active\": true,\n        \"CreatedAt\": \"/Date(1680156000000)/\",\n        \"Description\": \"240 GB storage\",\n        \"Id\": \"1\",\n        \"Name\": \"Iphone x red\",\n        \"Price\": \"30000.0\",\n        \"CategoryDetails\": {\n            \"__deferred\": {\n                \"uri\": \"http://localhost:8080/odata/Products(1L)/CategoryDetails\"\n            }\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "get all categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/odata/Categorys?$format=json",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"odata",
+								"Categorys"
+							],
+							"query": [
+								{
+									"key": "$format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get all categories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/odata/Categorys?$format=json",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"odata",
+										"Categorys"
+									],
+									"query": [
+										{
+											"key": "$format",
+											"value": "json"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "DataServiceVersion",
+									"value": "2.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "552"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Mar 2023 16:13:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"d\": {\n        \"results\": [\n            {\n                \"__metadata\": {\n                    \"id\": \"http://localhost:8080/odata/Categorys(1L)\",\n                    \"uri\": \"http://localhost:8080/odata/Categorys(1L)\",\n                    \"type\": \"default.Category\"\n                },\n                \"Id\": \"1\",\n                \"Name\": \"home\",\n                \"ProductDetails\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://localhost:8080/odata/Categorys(1L)/ProductDetails\"\n                    }\n                }\n            },\n            {\n                \"__metadata\": {\n                    \"id\": \"http://localhost:8080/odata/Categorys(2L)\",\n                    \"uri\": \"http://localhost:8080/odata/Categorys(2L)\",\n                    \"type\": \"default.Category\"\n                },\n                \"Id\": \"2\",\n                \"Name\": \"tecnology\",\n                \"ProductDetails\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://localhost:8080/odata/Categorys(2L)/ProductDetails\"\n                    }\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "get metadata",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/odata/$metadata",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"odata",
+						"$metadata"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get metadata",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/odata/$metadata",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"odata",
+								"$metadata"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "DataServiceVersion",
+							"value": "1.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/xml;charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3616"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Mar 2023 16:11:29 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "<?xml version=\"1.0\" ?>\n<edmx:Edmx xmlns:edmx=\"http://schemas.microsoft.com/ado/2007/06/edmx\" Version=\"1.0\">\n    <edmx:DataServices m:DataServiceVersion=\"1.0\" xmlns:m=\"http://schemas.microsoft.com/ado/2007/08/dataservices/metadata\">\n        <Schema Namespace=\"default\" xmlns=\"http://schemas.microsoft.com/ado/2008/09/edm\">\n            <EntityType Name=\"CarModel\">\n                <Key>\n                    <PropertyRef Name=\"Id\"></PropertyRef>\n                </Key>\n                <Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\"></Property>\n                <Property Name=\"Maker\" Type=\"Edm.Int64\" Nullable=\"true\"></Property>\n                <Property Name=\"Name\" Type=\"Edm.String\"></Property>\n                <Property Name=\"Sku\" Type=\"Edm.String\"></Property>\n                <Property Name=\"Year\" Type=\"Edm.Int32\"></Property>\n                <NavigationProperty Name=\"CarMakerDetails\" Relationship=\"default.CarModel_CarMaker_Many_ZeroToOne0\" FromRole=\"CarModel\" ToRole=\"CarMaker\"></NavigationProperty>\n            </EntityType>\n            <EntityType Name=\"CarMaker\">\n                <Key>\n                    <PropertyRef Name=\"Id\"></PropertyRef>\n                </Key>\n                <Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\"></Property>\n                <Property Name=\"Name\" Type=\"Edm.String\"></Property>\n                <NavigationProperty Name=\"CarModelDetails\" Relationship=\"default.CarModel_CarMaker_Many_ZeroToOne0\" FromRole=\"CarMaker\" ToRole=\"CarModel\"></NavigationProperty>\n            </EntityType>\n            <EntityType Name=\"Category\">\n                <Key>\n                    <PropertyRef Name=\"Id\"></PropertyRef>\n                </Key>\n                <Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\"></Property>\n                <Property Name=\"Name\" Type=\"Edm.String\"></Property>\n                <NavigationProperty Name=\"ProductDetails\" Relationship=\"default.Category_Product_Many_Many0\" FromRole=\"Category\" ToRole=\"Product\"></NavigationProperty>\n            </EntityType>\n            <EntityType Name=\"Product\">\n                <Key>\n                    <PropertyRef Name=\"Id\"></PropertyRef>\n                </Key>\n                <Property Name=\"Active\" Type=\"Edm.Boolean\"></Property>\n                <Property Name=\"CreatedAt\" Type=\"Edm.DateTime\" Nullable=\"true\"></Property>\n                <Property Name=\"Description\" Type=\"Edm.String\"></Property>\n                <Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\"></Property>\n                <Property Name=\"Name\" Type=\"Edm.String\"></Property>\n                <Property Name=\"Price\" Type=\"Edm.Single\"></Property>\n                <NavigationProperty Name=\"CategoryDetails\" Relationship=\"default.Category_Product_Many_Many0\" FromRole=\"Product\" ToRole=\"Category\"></NavigationProperty>\n            </EntityType>\n            <Association Name=\"CarModel_CarMaker_Many_ZeroToOne0\">\n                <End Type=\"default.CarModel\" Multiplicity=\"*\" Role=\"CarModel\"></End>\n                <End Type=\"default.CarMaker\" Multiplicity=\"0..1\" Role=\"CarMaker\"></End>\n                <ReferentialConstraint>\n                    <Principal Role=\"CarMaker\">\n                        <PropertyRef Name=\"Id\"></PropertyRef>\n                    </Principal>\n                    <Dependent Role=\"CarModel\">\n                        <PropertyRef Name=\"Maker\"></PropertyRef>\n                    </Dependent>\n                </ReferentialConstraint>\n            </Association>\n            <Association Name=\"Category_Product_Many_Many0\">\n                <End Type=\"default.Category\" Multiplicity=\"*\" Role=\"Category\"></End>\n                <End Type=\"default.Product\" Multiplicity=\"*\" Role=\"Product\"></End>\n            </Association>\n            <EntityContainer Name=\"defaultContainer\" m:IsDefaultEntityContainer=\"true\">\n                <EntitySet Name=\"CarModels\" EntityType=\"default.CarModel\"></EntitySet>\n                <EntitySet Name=\"CarMakers\" EntityType=\"default.CarMaker\"></EntitySet>\n                <EntitySet Name=\"Categorys\" EntityType=\"default.Category\"></EntitySet>\n                <EntitySet Name=\"Products\" EntityType=\"default.Product\"></EntitySet>\n                <AssociationSet Name=\"CarModel_CarMaker_Many_ZeroToOne0Set\" Association=\"default.CarModel_CarMaker_Many_ZeroToOne0\">\n                    <End EntitySet=\"CarModels\" Role=\"CarModel\"></End>\n                    <End EntitySet=\"CarMakers\" Role=\"CarMaker\"></End>\n                </AssociationSet>\n                <AssociationSet Name=\"Category_Product_Many_Many0Set\" Association=\"default.Category_Product_Many_Many0\">\n                    <End EntitySet=\"Categorys\" Role=\"Category\"></End>\n                    <End EntitySet=\"Products\" Role=\"Product\"></End>\n                </AssociationSet>\n            </EntityContainer>\n        </Schema>\n    </edmx:DataServices>\n</edmx:Edmx>"
+				}
+			]
+		}
+	]
+}
